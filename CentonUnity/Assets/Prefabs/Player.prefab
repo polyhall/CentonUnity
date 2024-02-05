@@ -105,7 +105,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.8
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -124,13 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77c265b60d27ee4fba4164931a15653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 3
   crouchSpeed: 2
-  normalHeight: 1
-  crouchHeight: 0.5
+  normalHeight: 1.8
+  crouchHeight: 1
   groundAccel: 10
   airAccel: 2
   gravity: 9.81
+  jumpPower: 5
 --- !u!1 &4008648435211190741
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ GameObject:
   - component: {fileID: 4120663430887758052}
   - component: {fileID: 6791231747730801072}
   - component: {fileID: 4899664729507769727}
+  - component: {fileID: 7158976089956971411}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -197,7 +199,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -223,3 +225,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4008648435211190741}
   m_Enabled: 1
+--- !u!114 &7158976089956971411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008648435211190741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf957180c30856498286591e6109c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 5
+  playerBody: {fileID: 4956553101779935537}

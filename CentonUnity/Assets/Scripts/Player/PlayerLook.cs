@@ -21,7 +21,7 @@ public class PlayerLook : MonoBehaviour
 
         if (!photonView.IsMine)
         {
-            gameObject.SetActive(false);
+            GetComponent<Camera>().enabled = false;
         }
 
     }

@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private float acceleration;
     private float height;
     private bool crouching = false;
+    private bool noClipping = false;
 
     // Methods
     void Start()

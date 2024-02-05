@@ -13,6 +13,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 
     // Methods
+    void Awake()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+    }
+
     void Start()
     {
         Debug.Log("Connecting...");

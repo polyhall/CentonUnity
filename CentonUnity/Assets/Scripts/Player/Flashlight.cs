@@ -7,23 +7,22 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class Flashlight : MonoBehaviour
 {
     public PhotonView photonView;
-    private Light flashlight;
-    private bool active = false;
-
+    public GameObject flashlight;
 
     // Methods
-    void Start()
-    {
-        flashlight = GetComponent<Light>();
-    }
-
     void Update()
     {
         if (!photonView.IsMine) {return;}
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            flashlight.enabled = !flashlight.enabled;
+            photonView.RPC("ToggleFlashlight", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    public void ToggleFlashlight()
+    {
+        flashlight.SetActive(!flashlight.activeSelf);
     }
 }

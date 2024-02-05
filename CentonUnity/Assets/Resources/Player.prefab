@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 5
   playerBody: {fileID: 4956553101779935537}
+  photonView: {fileID: 2471482727058971793}
 --- !u!114 &1789740770626123942
 MonoBehaviour:
   m_ObjectHideFlags: 0

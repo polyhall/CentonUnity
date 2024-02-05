@@ -13,42 +13,29 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 
     // Methods
-    void Awake()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-    }
-
     void Start()
     {
-        Connect();
+        Debug.Log("Connecting...");
+        PhotonNetwork.ConnectUsingSettings();
     }
 
-    public void Connect()
-    {
-        if (PhotonNetwork.IsConnected)
-        {
-            PhotonNetwork.JoinRandomRoom();
-        }
-        else
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
-    }
-
-    //
+    //--
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
 
-        PhotonNetwork.JoinRandomRoom();
+        Debug.Log("Connected to server");
+
+        PhotonNetwork.JoinLobby();
     }
 
-
-    public override void OnJoinRandomFailed(short returnCode, string message)
+    public override void OnJoinedLobby()
     {
-        base.OnJoinRandomFailed(returnCode, message);
+        base.OnJoinedLobby();
 
-        PhotonNetwork.CreateRoom(null, new RoomOptions());
+        PhotonNetwork.JoinOrCreateRoom("test", null, null);
+
+        Debug.Log("Connected, now in room!");
     }
 
 
@@ -56,6 +43,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
 
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity);
     }
 }

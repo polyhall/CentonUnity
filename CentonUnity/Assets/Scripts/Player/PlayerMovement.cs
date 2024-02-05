@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+
+        if (!photonView.IsMine) {return;}
+
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
     }

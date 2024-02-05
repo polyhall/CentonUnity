@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2471482727058971793}
   - component: {fileID: 7035989868619106494}
   - component: {fileID: 4103544259481156400}
+  - component: {fileID: 8348155786019810602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,6 +175,20 @@ MonoBehaviour:
   airAccel: 2
   gravity: 9.81
   jumpPower: 5
+--- !u!114 &8348155786019810602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485391715311480858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d243b154ed4424b82ae91a1f0ee073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 2471482727058971793}
+  flashlight: {fileID: 5032529713603793151}
 --- !u!1 &4008648435211190741
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,8 +203,6 @@ GameObject:
   - component: {fileID: 3596522818335437182}
   - component: {fileID: 7158976089956971411}
   - component: {fileID: 1789740770626123942}
-  - component: {fileID: 7312701514286248614}
-  - component: {fileID: 4114460586122964896}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -364,43 +377,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &7312701514286248614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008648435211190741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 3596522818335437182}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &4114460586122964896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008648435211190741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d243b154ed4424b82ae91a1f0ee073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photonView: {fileID: 7312701514286248614}
-  flashlight: {fileID: 5032529713603793151}
 --- !u!1 &5032529713603793151
 GameObject:
   m_ObjectHideFlags: 0

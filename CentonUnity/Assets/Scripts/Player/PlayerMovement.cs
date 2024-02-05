@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 velocity;
     private CharacterController controller;
+    private PhotonView photonView;
     private float moveSpeed;
     private float acceleration;
     private float height;
@@ -27,12 +29,15 @@ public class PlayerMovement : MonoBehaviour
     // Methods
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
     }
 
     void Update()
     {
+        if (!photonView.IsMine) {return;}
+
         inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         inputDirection.Normalize();
     

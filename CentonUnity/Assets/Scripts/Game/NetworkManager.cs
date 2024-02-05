@@ -11,7 +11,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public Transform spawnPoint;
     public GameObject playerPrefab;
 
-
     // Methods
     void Awake()
     {
@@ -49,5 +48,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
 
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity);
+    }
+
+
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
     }
 }

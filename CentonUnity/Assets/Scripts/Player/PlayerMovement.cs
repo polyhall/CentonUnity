@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 velocity;
     private CharacterController controller;
+    private BoxCollider headBumpCollider;
     private PhotonView photonView;
     private float moveSpeed;
     private float acceleration;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (!photonView.IsMine) {return;}
 
         controller = GetComponent<CharacterController>();
+        headBumpCollider = GetComponent<BoxCollider>();
         moveSpeed = walkSpeed;
     }
 
@@ -72,8 +74,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //--
-        crouching = Input.GetKey(KeyCode.LeftControl);
-        
         if (crouching)
         {
             height = crouchHeight;

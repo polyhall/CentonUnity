@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7035989868619106494}
   - component: {fileID: 4103544259481156400}
   - component: {fileID: 8348155786019810602}
-  - component: {fileID: 3227281420579601717}
+  - component: {fileID: 1522810574631474344}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 2471482727058971793}
   flashlight: {fileID: 5032529713603793151}
---- !u!114 &3227281420579601717
+--- !u!114 &1522810574631474344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,10 +199,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485391715311480858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b9991013eb1584c9012326e5497193, type: 3}
+  m_Script: {fileID: 11500000, guid: 72408ea17e5dca84dbdb5427ad2ba19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 2219461090229609857, guid: d1c2008b9cd35bf43af31e920dc8e45d, type: 3}
 --- !u!1 &4008648435211190741
 GameObject:
   m_ObjectHideFlags: 0
